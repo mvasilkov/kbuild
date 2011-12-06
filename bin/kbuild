@@ -201,7 +201,7 @@ def main():
         help='Specify to either create a [deps] file, generate [compile]d output, run [fix]jsstyle, run gjs[lint], [build] deps then compile, or [fb] to fix then build.')
 
     parser.add_argument('--buildfile',
-        default='config.kb',
+        default='buildconf.kb',
         help='The yaml config file to use.')
 
     parser.add_argument('--debug', '-d',
