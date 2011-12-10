@@ -33,13 +33,13 @@ def get_closure_roots(closure_path):
 
 def get_compiler_flags(closure_path, debug = False, closure_entry_point = None, language_in = None):
     compilerflags  = []
-    compilerflags += ["--compilation_level=ADVANCED_OPTIMIZATIONS"]
+  # compilerflags += ["--compilation_level=ADVANCED_OPTIMIZATIONS"]
     compilerflags += ["--summary_detail_level=3"]
     compilerflags += ["--warning_level=VERBOSE"]
     compilerflags += ['--generate_exports']
 
-    for error in ['checkRegExp', 'checkVars', 'deprecated', 'invalidCasts', 'missingProperties', 'undefinedVars', 'visibility', 'uselessCode', 'const', 'duplicate', 'es5Strict', 'invalidCasts', 'constantProperty', 'checkTypes', 'ambiguousFunctionDecl']:
-        compilerflags += ['--jscomp_error=%s' % error]
+  # for error in ['checkRegExp', 'checkVars', 'deprecated', 'invalidCasts', 'missingProperties', 'undefinedVars', 'visibility', 'uselessCode', 'const', 'duplicate', 'es5Strict', 'invalidCasts', 'constantProperty', 'checkTypes', 'ambiguousFunctionDecl']:
+  #     compilerflags += ['--jscomp_error=%s' % error]
 
     for warning in ['accessControls', 'fileoverviewTags', 'nonStandardJsDocs', 'strictModuleDepCheck', 'unknownDefines']:
         compilerflags += ['--jscomp_warning=%s' % warning]
@@ -209,7 +209,7 @@ def main():
         help='Enable debug output when in compile mode.')
 
     parser.add_argument('--language_in',
-        default='ECMASCRIPT5_STRICT',
+        default='ECMASCRIPT5',
         choices=['ECMASCRIPT3', 'ECMASCRIPT5', 'ECMASCRIPT5_STRICT'],
         help='Sets what language spec that input sources conform.')
 
